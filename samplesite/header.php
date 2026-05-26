@@ -30,12 +30,13 @@ $(function() {
             <h1><a href="<?php echo home_url(); ?>/index./"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
             <div id="menu">
                 <ul>
-                    <li class="home"><a href="<?php echo home_url(); ?>/index/">TOP</a></li>
-                    <li><a href="<?php echo home_url(); ?>/company/">会社概要</a></li>
-                    <li><a href="<?php echo home_url(); ?>/service/">サービス概要</a></li>
-                    <li><a href="<?php echo home_url(); ?>/archive-news/">プレスリリース</a></li>
-                    <li><a href="<?php echo home_url(); ?>/archive-news/">ブログ</a></li>
-                    <li><a href="<?php echo home_url(); ?>/contact/">お問い合わせ</a></li>
+                    <li class="home"><a href="<?php echo home_url(); ?>/">TOP</a></li>
+                    <?php wp_nav_menu( array(
+                        'theme_location' => 'place_global',
+                        'container' => '',
+                        'menu_class' => '',
+                        'items_wrap' => '%3$s', //<ul>を出力しない
+                    ) ); ?>
                 </ul>
             </div>
         </div>

@@ -1,3 +1,4 @@
+<?php get_header(); ?>
     <div id="cont_first" class="container">
         <div id="contents">
             <div id="cont_left">
@@ -24,38 +25,21 @@
                 <div class="information">
                     <h2>INFORMATION</h2>
                     <dl>
-                        <dt>2020-08-01</dt>
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
-                        <span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="sample.html">夏季休暇のお知らせを掲載しました</a></dd>
-                        <dt>2020-07-29</dt>
-                        <dd>
-                        <span class="tab tag_release">プレスリリース</span>
-                        <a href="sample.html">新サービスのお知らせを掲載しました</a></dd>
-                        <dt>2020-07-23</dt>
-                        <dd>
-                        <span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="sample.html">雑誌掲載情報を掲載しました</a></dd>
-                        <dt>2020-07-20</dt>
-                        <dd>
-                        <span class="tab tag_gyoumu">お知らせ</span>
-                        <a href="sample.html">雑誌掲載情報を掲載しました</a></dd>
-                        <dt>2020-07-17</dt>
-                        <dd>
-                        <span class="tab tag_release">プレスリリース</span>
-                        <a href="sample.html">新サービスのお知らせを掲載しました</a></dd>
+                        <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>">
+                            <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?>
+                        </span>
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>を掲載しました。
+                        </dd>  
+                         <?php endwhile; endif; ?>
                     </dl>
                 </div>
             </div>
-            <div id="cont_right">
-                <div class="sub-menu">
-                    <h3>SERVICE</h3>
-                    <h4>Web事業</h4>
-                    <ul>
-                        <li><a href="service.html#s1">ホームページ制作</a></li>
-                        <li><a href="service.html#s2">エンジニア派遣</a></li>
-                    </ul>
-                </div>
-            </div>
+            <?php get_sidebar(); ?>
         </div>
     </div>
+<?php get_footer(); ?>
