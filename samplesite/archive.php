@@ -5,21 +5,17 @@
                 <div class="information">
                     <h2>Blog</h2>
                     <dl>
-                        <dt>2020-08-04</dt>
+                        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
-                            <div class="b_img"><img src="images/sample.jpg"></div>
-                            <div class="b_right"><a href="sample.html">社長通信</a></div>
+                            <div class="b_img">
+                                <?php the_post_thumbnail('thumbside'); ?>
+                            </div>
+                            <div class="b_right">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </div>
                         </dd>
-                        <dt>2020-08-02</dt>
-                        <dd>
-                            <div class="b_img"><img src="images/sample.jpg"></div>
-                            <div class="b_right"><a href="sample.html">社員紹介</a></div>
-                        </dd>
-                        <dt>2020-08-01</dt>
-                        <dd>
-                            <div class="b_img"><img src="images/sample.jpg"></div>
-                            <div class="b_right"><a href="sample.html">セミナー開催報告</a></div>
-                        </dd>
+                        <?php endwhile; endif; ?>   
                     </dl>
                 </div>
                 <div class="information">
@@ -38,6 +34,7 @@
                          <?php endwhile; endif; ?>
                     </dl>
                 </div>
+                <?php wp_pagenavi(); ?>
             </div>
             <?php get_sidebar(); ?>
         </div>

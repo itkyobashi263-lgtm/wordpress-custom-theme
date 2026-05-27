@@ -41,3 +41,11 @@ $(function() {
             </div>
         </div>
     </header>
+    <?php if ( ! is_home() ) : ?>
+        <div class="container bread_list">
+            <?php if(function_exists('bcn_display'))
+                {
+                    bcn_display();
+                }?>
+        </div>
+    <?php endif; ?>
