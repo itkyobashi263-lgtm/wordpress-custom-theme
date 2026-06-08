@@ -1,5 +1,8 @@
 <?php get_header(); ?>
-    <div id="cont_first" class="container">
+        <div id="cont_first" class="container">
+        <div class="bread_list">
+            <?php if(function_exists('bcn_display')) { bcn_display(); } ?>
+        </div>
         <div id="contents">
             <div id="cont_left">
                 <div class="information">
@@ -18,6 +21,7 @@
                         <?php endwhile; endif; ?>   
                     </dl>
                 </div>
+                <?php wp_pagenavi(); ?>
             </div>
             <?php get_sidebar(); ?>
         </div>

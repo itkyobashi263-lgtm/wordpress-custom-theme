@@ -27,7 +27,7 @@ $(function() {
 <body>
     <header>
         <div class="container">
-            <h1><a href="<?php echo home_url(); ?>/index./"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
+            <h1><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt="SAMPLE WEB SITE" /></a></h1>
             <div id="menu">
                 <ul>
                     <li class="home"><a href="<?php echo home_url(); ?>/">TOP</a></li>
@@ -41,11 +41,3 @@ $(function() {
             </div>
         </div>
     </header>
-    <?php if ( ! is_home() ) : ?>
-        <div class="container bread_list">
-            <?php if(function_exists('bcn_display'))
-                {
-                    bcn_display();
-                }?>
-        </div>
-    <?php endif; ?>

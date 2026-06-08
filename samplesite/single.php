@@ -1,5 +1,8 @@
 <?php get_header(); ?>
     <div id="cont_first" class="container">
+        <div class="bread_list">
+            <?php if(function_exists('bcn_display')) { bcn_display(); } ?>
+        </div>
         <div id="contents">
             <div id="cont_left">
                 <?php if(have_posts()): while(have_posts()): the_post();?>
