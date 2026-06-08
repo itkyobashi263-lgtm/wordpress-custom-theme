@@ -34,7 +34,7 @@
                 <div class="information">
                     <h2>INFORMATION</h2>
                     <dl>
-                        <?php $infoPosts = get_posts('numberposts=3&category=1,4,5'); foreach($infoPosts as $post): ?>
+                        <?php $infoPosts = get_posts('numberposts=4&category=1,4,5'); foreach($infoPosts as $post): ?>
                         <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
                             <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>">
@@ -50,7 +50,7 @@
                 <div class="information">
                     <h2>BLOG</h2>
                     <dl>
-                        <?php $infoPosts = get_posts('numberposts=3&category=6'); foreach($infoPosts as $post): ?>
+                        <?php $infoPosts = get_posts('numberposts=3&category=3'); foreach($infoPosts as $post): ?>
                         <dt><?php the_time('Y-m-d'); ?></dt>
                         <dd>
                             <div class="b_img">
