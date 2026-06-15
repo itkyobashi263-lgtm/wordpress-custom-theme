@@ -10,11 +10,6 @@
          <div class="cont-nav"></div>
     </div>
     <div class="container">
-        <?php if ( ! is_home() && ! is_front_page() ) : ?>
-            <div class="bread_list">
-                <?php if(function_exists('bcn_display')) { bcn_display(); } ?>
-            </div>
-        <?php endif; ?>
         <div id="contents">
             <div class="top-nav">
                 <div class="top-navColumn top-navColumn_left">

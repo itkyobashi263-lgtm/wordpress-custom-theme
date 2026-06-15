@@ -9,16 +9,16 @@
                     <h2>INFORMATION</h2>
                     <dl>
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                        <dt><?php the_time('Y-m-d'); ?></dt>
-                        <dd>
-                        <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>">
-                            <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?>
-                        </span>
-                        <a href="<?php the_permalink(); ?>">
-                            <?php the_title(); ?>
-                        </a>を掲載しました。
-                        </dd>  
-                         <?php endwhile; endif; ?>
+                            <dt><?php the_time('Y-m-d'); ?></dt>
+                            <dd>
+                                <span class="tab tag_<?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->slug; } ?>">
+                                    <?php $cat = get_the_category(); $cat = $cat[0]; { echo $cat->cat_name; } ?>
+                                </span>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php the_title(); ?>
+                                </a>を掲載しました。
+                            </dd>
+                        <?php endwhile; endif; ?>
                     </dl>
                 </div>
                 <?php wp_pagenavi(); ?>

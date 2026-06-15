@@ -23,7 +23,8 @@ $(function() {
     <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
 <?php endif; ?>
  <link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
-<?php wp_head(); ?></head>
+<?php wp_head(); ?>
+</head>
 <body>
     <header>
         <div class="container">
