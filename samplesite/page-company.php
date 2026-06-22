@@ -1,4 +1,3 @@
-<?php
 <?php get_header(); ?>
     <div id="cont_first" class="container">
         <div class="bread_list">
